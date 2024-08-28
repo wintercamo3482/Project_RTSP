@@ -38,9 +38,9 @@ int main(int argc, char *argv[])
 
     cout << "Init RTSP server Done!!!" << endl;
 
-    gst_rtsp_server_set_service(server, "8554");    // 포트 설정
+    gst_rtsp_server_set_service(server, "8556");    // 포트 설정
 
-    string pipeline_command = "v4l2src device=/dev/video0 ! videoconvert ! video/x-raw,format=I420,width=640,height=480 ! x264enc speed-preset=ultrafast tune=zerolatency ! rtph264pay name=pay0 pt=96";
+    string pipeline_command = "v4l2src device=/dev/video3 ! videoconvert ! video/x-raw,format=I420,width=640,height=480 ! x264enc speed-preset=ultrafast tune=zerolatency ! rtph264pay name=pay0 pt=96";
     gst_rtsp_media_factory_set_launch(factory, pipeline_command.c_str());
 
     cout << "Init GStreamer Pipeline Done!!!" << endl;
@@ -55,12 +55,13 @@ int main(int argc, char *argv[])
     cout << "Running RTSP server at";
 
     if (!wlan0_ip.empty() && wlan0_ip != "ERROR") {
-        cout << " - wlan0: rtsp://" << wlan0_ip << ":8554/test" << endl;
+        cout << " - wlan0: rtsp://" << wlan0_ip << ":8555/testA" << endl;
     }
-    
+
     if (!eth0_ip.empty() && eth0_ip != "ERROR") {
-        cout << " - eth0: rtsp://" << eth0_ip << ":8554/test" << endl;
+        cout << " - eth0: rtsp://" << eth0_ip << ":8555/testA" << endl;
     }
+
 
     cout << "Main_loop start!!!" << endl;
 
