@@ -1,0 +1,3 @@
+/home/ubuntu/git_ws/project_RTSP/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/git_ws/project_RTSP/build/CMakeFiles/rtsp_server.dir
+/home/ubuntu/git_ws/project_RTSP/build/CMakeFiles/edit_cache.dir

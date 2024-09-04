@@ -1,7 +1,8 @@
+import gi
 import argparse
 import subprocess
 import re
-import gi
+
 gi.require_version('Gst', '1.0')
 gi.require_version('GstRtspServer', '1.0')
 from gi.repository import Gst, GstRtspServer, GObject, GLib
@@ -19,12 +20,12 @@ def get_ip_address(interface):
         return None
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--d', type=str, default="/dev/video0")
-    parser.add_argument('--w', type=str, default="640")
-    parser.add_argument('--h', type=str, default="480")
-    parser.add_argument('--p', type=str, default="8554")
-    parser.add_argument('--n', type=str, default="/test")
+    parser = argparse.ArgumentParser(description='GStreamer RTSP Server')
+    parser.add_argument('--d', type=str, default="/dev/video0", help="Video device")
+    parser.add_argument('--w', type=str, default="640", help="Video width")
+    parser.add_argument('--h', type=str, default="480", help="Video height")
+    parser.add_argument('--p', type=str, default="8554", help="RTSP server port")
+    parser.add_argument('--n', type=str, default="/test", help="RTSP stream path")
     args = parser.parse_args()
 
     # Check the network interfaces

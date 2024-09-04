@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/rtsp_server.dir/src/main.cpp.o CMakeFiles/rtsp_server.dir/src/rtsp_server.cpp.o  -o rtsp_server -lgstrtspserver-1.0 -lgstbase-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0 
